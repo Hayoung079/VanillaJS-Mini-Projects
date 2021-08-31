@@ -1,4 +1,4 @@
-let passwordBox = document.querySelector('#password');
+const passwordBox = document.querySelector('#password');
 const alertBox = document.querySelector('.alertBox'); 
 
 function getPassword() {
