@@ -5,6 +5,11 @@ HTML / CSS / Vanilla JS
 
 ![calculator](https://user-images.githubusercontent.com/76716519/131508136-5144737e-a6e9-4bf4-8006-29d43782f432.gif)
 
+## :fearful: 오류 발견! :sob:
+
+1. 한번 연산자를 선택하면 바꿀 수 없음
+2. 나누기 연산시 소수점이 너무 길어져서 ui가 깨짐 -> 적당한 자리에서 반올림하기
+
 ## :question: What I Learn
 
 #### 1. HTML: Data 속성
