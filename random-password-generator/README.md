@@ -3,6 +3,8 @@
 HTML / CSS / Vanilla JS
 <br/>
 
+![random-password](https://user-images.githubusercontent.com/76716519/131508002-15b358ef-7ca4-4242-bc3b-1cc4c549da08.gif)
+
 ## :question: What I Learn
 
 #### 1. document.exeCommand() 메서드
@@ -13,6 +15,8 @@ HTML / CSS / Vanilla JS
 - Document.execCommand('paste')를 사용하여 클립 보드에 이미있는 내용을 붙여 넣기
 - select() 와 함께 setSelectionRange() 메소드로 선택 영역을 직접 지정해주면 ios, safari에서 동작
 
+---
+
 #### 2. select() 메서드
 
 - textarea 나 input과 같은 form 엘리먼트에서만 사용할 수 있음
@@ -21,6 +25,3 @@ HTML / CSS / Vanilla JS
 
 - [Clipboard API](https://developer.mozilla.org/ko/docs/Web/API/Clipboard_API)는 클립 보드에 내용을 복사하고 붙여 넣을 수있는 비동기 읽기 및 쓰기 작업을 제공
 - navigator.clipboard개체 내에서 사용
-  <br/>
-
-![random-password](https://user-images.githubusercontent.com/76716519/131508002-15b358ef-7ca4-4242-bc3b-1cc4c549da08.gif)

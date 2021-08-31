@@ -3,6 +3,8 @@
 HTML / CSS / Vanilla JS
 <br/>
 
+![calculator](https://user-images.githubusercontent.com/76716519/131508136-5144737e-a6e9-4bf4-8006-29d43782f432.gif)
+
 ## :question: What I Learn
 
 #### 1. HTML: Data 속성
@@ -134,7 +136,3 @@ user.drinkWater(); // 'Park drinks water.'
 ```
 
 참고: [this-MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
-
-  <br/>
-
-![calculator](https://user-images.githubusercontent.com/76716519/131508136-5144737e-a6e9-4bf4-8006-29d43782f432.gif)
