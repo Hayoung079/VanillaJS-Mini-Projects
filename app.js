@@ -12,7 +12,7 @@ function getPassword() {
   }
   passwordBox.value = password;
   console.log(password)
-  alertBox.innerHTML = `Copy Complite! <br/><br/> New Password : ${password}`;
+  alertBox.innerHTML = `Copy Complete! <br/><br/> New Password : ${password}`;
 }
 
 function copyPassword() {
