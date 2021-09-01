@@ -1,70 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	user-select: none;
 }
+
 body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-	background-color: #091921;
+	background-color: #f5f5f5;
+	min-height: 90vh;
 }
+
 h1 {
-	color: #fff;
-	font-weight: 500;
-	margin-bottom: 10px;
+	font-weight: 600;
+	text-shadow: 2px 2px 4px gray;
 }
+
 .calculator {
-	position: relative;
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 300px;
+	height: auto;
+	padding: 25px 35px;
+	border-radius: 10px;
+	background-color: #131313;
+	user-select: none;
+	box-shadow: 2px 4px 8px 0 gray;
 }
-.calculator .output {
-	grid-column: span 4;
-	padding: 10px;
-	max-width: 240px;
-	height: 100px;
-	margin-bottom: 5px;
+
+.display {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(2, minmax(40px, auto));
+	width: 100%;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px rgba(128, 128, 128, 0.116) solid;
+	word-wrap: break-word;
+}
+
+.display input {
+	height: 8vh;
+	color: white;
 	text-align: right;
 	border: none;
-	border-radius: 5px;
-	outline: none;
-	background-color: #fff;
+	background: none;
+	font-size: xx-large;
+	line-height: 2;
+	word-wrap: break-word;
 }
-.output .previous-operand {
-	height: 50%;
-	color: rgba(225, 225, 225, 0.75);
-	font-size: 1.2rem;
+
+.display output {
+	height: 7px;
+	color: rgba(150, 150, 150, 0.87);
+	text-align: right;
+	font-size: larger;
+	line-height: 3;
 }
-.output .current-operand {
-	color: #333;
-	font-size: 1.5rem;
-}
-.calculator button {
+
+.keypad {
 	display: grid;
-	width: 60px;
-	height: 60px;
-	color: #fff;
-	background-color: #0c2835;
-	place-items: center;
-	border: 1px solid rgba(0, 0, 0, 1);
+	grid: repeat(5, 70px) / repeat(4, 80px);
 }
-.calculator button:active {
-	background-color: #74ff3b;
-	color: #111;
+
+.keypad button {
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	background-color: #131313;
+	color: white;
+	font-size: x-large;
 }
-.calculator button.clear {
-	grid-column: span 2;
-	width: 120px;
-	background-color: #ff3077;
+
+.keypad button:hover {
+	background-color: rgba(29, 29, 29, 0.979);
 }
-.calculator button.equals {
-	grid-column: span 2;
-	width: 120px;
-	background-color: #03b1ff;
+
+.keypad button.operation {
+	color: #ff8800;
 }
