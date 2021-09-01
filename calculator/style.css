@@ -20,11 +20,11 @@ h1 {
 	font-weight: 500;
 	margin-bottom: 10px;
 }
-.calculator {
+.container {
 	position: relative;
 	display: grid;
 }
-.calculator .output {
+.container .displayArea {
 	grid-column: span 4;
 	padding: 10px;
 	max-width: 240px;
@@ -41,11 +41,11 @@ h1 {
 	color: rgba(225, 225, 225, 0.75);
 	font-size: 1.2rem;
 }
-.output .current-operand {
+.displayArea .answer {
 	color: #333;
 	font-size: 1.5rem;
 }
-.calculator button {
+.container button {
 	display: grid;
 	width: 60px;
 	height: 60px;
@@ -54,17 +54,13 @@ h1 {
 	place-items: center;
 	border: 1px solid rgba(0, 0, 0, 1);
 }
-.calculator button:active {
+.container button:active {
 	background-color: #74ff3b;
 	color: #111;
 }
-.calculator button.clear {
-	grid-column: span 2;
-	width: 120px;
+.container button#clear {
 	background-color: #ff3077;
 }
-.calculator button.equals {
-	grid-column: span 2;
-	width: 120px;
+.container button#equals {
 	background-color: #03b1ff;
 }
