@@ -46,7 +46,7 @@ class Calculator {
         computation = prev * current
         break
       case '/':
-        computation = Math.ceil((prev / current)*10000000) /10000000
+        computation = Math.round((prev / current)*10000000) /10000000
         break
       default:
         return
