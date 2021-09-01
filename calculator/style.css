@@ -27,22 +27,23 @@ h1 {
 .calculator .output {
 	grid-column: span 4;
 	padding: 10px;
+	max-width: 240px;
 	height: 100px;
 	margin-bottom: 5px;
 	text-align: right;
 	border: none;
 	border-radius: 5px;
 	outline: none;
-	font-size: 18px;
 	background-color: #fff;
 }
 .output .previous-operand {
+	height: 50%;
 	color: rgba(225, 225, 225, 0.75);
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 .output .current-operand {
 	color: #333;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 .calculator button {
 	display: grid;

@@ -6,7 +6,7 @@ class Calculator {
   }
 
   clear() {
-    this.currentOperand = ''
+    this.currentOperand = 0
     this.previousOperand = ''
     this.operation = undefined
   }
@@ -21,7 +21,7 @@ class Calculator {
   }
 
   chooseOperation(operation) {
-    if (this.currentOperand === '') return
+    if (this.currentOperand === 0) return
     if (this.previousOperand !== '') {
       this.compute()
     }
@@ -45,8 +45,8 @@ class Calculator {
       case '*':
         computation = prev * current
         break
-      case '÷':
-        computation = prev / current
+      case '/':
+        computation = Math.ceil((prev / current)*10000000) /10000000
         break
       default:
         return
@@ -58,14 +58,22 @@ class Calculator {
 
   getDisplayNumber(number) {
     const stringNumber = number.toString()
-    const integerDigits = parseFloat(stringNumber.split('.')[0])
-    const decimalDigits = stringNumber.split('.')[1]
+    let integerDigits = parseFloat(stringNumber.split('.')[0])
+    let decimalDigits = stringNumber.split('.')[1]
     let integerDisplay
+
+    if(stringNumber.length > 13) {
+      const maxStringNumber = stringNumber.substr(0,13)
+      integerDigits = parseFloat(maxStringNumber.split('.')[0])
+      decimalDigits = maxStringNumber.split('.')[1]
+    }
+
     if (isNaN(integerDigits)) {
       integerDisplay = ''
     } else {
-      integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
+      integerDisplay = new Intl.NumberFormat().format(integerDigits)
     }
+
     if (decimalDigits != null) {
       return `${integerDisplay}.${decimalDigits}`
     } else {
