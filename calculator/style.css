@@ -26,7 +26,7 @@ h1 {
 }
 .container .displayArea {
 	grid-column: span 4;
-	padding: 10px;
+	padding: 10px 15px;
 	height: 100px;
 	margin-bottom: 5px;
 	text-align: right;
@@ -39,10 +39,11 @@ h1 {
 .displayArea .currentInput {
 	color: rgba(225, 225, 225, 0.75);
 	font-size: 1.5rem;
+	height: 60%;
 }
 .displayArea .answer {
 	color: #333;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 .container button {
 	display: grid;
