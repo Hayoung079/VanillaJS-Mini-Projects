@@ -9,29 +9,32 @@
 </head>
 <body>
   <h1>CalCulator</h1>
-  <div class="calculator">
-    <div class="output">
-      <div data-previous-operand class="previous-operand"></div>
-      <div data-current-operand class="current-operand"></div>
-    </div>
-    <button data-all-clear class="clear">AC</button>
-    <button data-delete >DEL</button>
-    <button data-operation>/</button>
-    <button data-number>7</button>
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <button data-operation>*</button>
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <button data-operation>-</button>
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <button data-operation>+</button>
-    <button data-number>0</button>
-    <button data-number>.</button>
-    <button data-equals class="equals">=</button>
+  <div class="container">
+    <section class="displayArea">
+      <div class="currentInput">sd</div>
+      <div class="answer">0</div>
+    </section>
+    <button class="fun-btn" id="clear" value="">C</button>
+      <button class="fun-btn" id="delete" value="">&#11013;</button>
+      <button class="fun-btn" value="%">%</button>
+      <button class="fun-btn" value="/">/</button>
+      <button class="num-btn" value="8">8</button>
+      <button class="num-btn" value="7">7</button>
+      <button class="num-btn" value="9">9</button>
+      <button class="num-btnfun-btn" value="*">*</button>
+      <button class="num-btn" value="4">4</button>
+      <button class="num-btn" value="5">5</button>
+      <button class="num-btn" value="6">6</button>
+      <button class="num-btnfun-btn" value="-">-</button>
+      <button class="num-btn" value="1">1</button>
+      <button class="num-btn" value="2">2</button>
+      <button class="num-btn" value="3">3</button>
+      <button class="num-btnfun-btn" value="+">+</button>
+      <button class="num-btn" value="00">00</button>
+      <button class="num-btn" value="0">0</button>
+      <button class="num-btn" value=".">.</button>
+      <button class="fun-btn" id="equals" value="">=</button>
+  </div>
   </div>
   <script src="app.js"></script>
 </body>
