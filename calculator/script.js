@@ -2,6 +2,7 @@ class Calculator {
   constructor(input, output) {
     this.inputDisplay = input;    // input을 보여주는 엘리먼트
     this.outputDisplay = output;  // output을 보여주는 엘리먼트
+    this.percentToggle = true;    // percent를 토글로 만들기 위한
     this.inputHistory = [];       // input을 저장하는 배열
   }
 
@@ -30,7 +31,13 @@ class Calculator {
 
   changePersentToDecimal() {
     if(this.getLastInputType() === 'number') {
-      this.editLastInput(this.getLastInputValue() / 100, 'number');
+      if(this.percentToggle === true) {
+        this.editLastInput(this.getLastInputValue() / 100, 'number');
+        this.percentToggle = false;
+      }else {
+        this.editLastInput(this.getLastInputValue() * 100, 'number');
+        this.percentToggle = true;
+      }
     }
   }
 
