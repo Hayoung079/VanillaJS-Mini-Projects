@@ -47,7 +47,6 @@ class Calculator {
     }else if(this.getLastInputType() === 'operator' || this.getLastInputType() === null) {
       this.addNewInput(value, 'number');
     }
-    console.log(this.getAllInputValues());
   }
 
   insertOperation(value) {
@@ -67,7 +66,6 @@ class Calculator {
       default:
         return;
     }
-    console.log(this.getAllInputValues());
   }
 
   negateNumber() {
