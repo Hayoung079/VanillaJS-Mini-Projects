@@ -102,7 +102,7 @@ class Calculator {
       }
     let result = ['/', '*', '+', '-'].reduce(simplifyExpression, this.getAllInputValues());
 
-    this.inputHistory.push({'type': 'number', 'value': result.toString()});
+    this.inputHistory.push({'type': 'number', 'value': Number(result).toLocaleString()});
     this.inputHistory = this.inputHistory.splice(this.inputHistory.length-1,1);
     this.updateOutputDisplay(result.toString());
     }
