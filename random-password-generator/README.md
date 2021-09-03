@@ -3,7 +3,7 @@
 HTML / CSS / Vanilla JS
 <br/>
 
-![random-password](https://user-images.githubusercontent.com/76716519/131508002-15b358ef-7ca4-4242-bc3b-1cc4c549da08.gif)
+![random-password](https://user-images.githubusercontent.com/76716519/132008821-cb36f513-d0ee-43e2-89b7-a373a9307b69.gif)
 
 ## :question: What I Learn
 
