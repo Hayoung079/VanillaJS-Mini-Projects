@@ -3,7 +3,7 @@
 HTML / CSS / Vanilla JS
 <br/>
 
-![calculator](https://user-images.githubusercontent.com/76716519/132006016-d983c215-ccf7-49fd-9db6-6d7e7a886d76.gif)
+![calculator](https://user-images.githubusercontent.com/76716519/132009917-a8681291-4b70-4838-9f2f-813bf167a454.gif)
 
 ## :question: What I Learn
 
