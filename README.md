@@ -7,4 +7,4 @@
 
 ## [2. Calculator](./calculator)
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/76716519/131508136-5144737e-a6e9-4bf4-8006-29d43782f432.gif" width="50%"></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/76716519/132006016-d983c215-ccf7-49fd-9db6-6d7e7a886d76.gif" width="50%"></p>

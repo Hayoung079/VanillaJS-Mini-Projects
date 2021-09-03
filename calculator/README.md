@@ -3,7 +3,7 @@
 HTML / CSS / Vanilla JS
 <br/>
 
-![calculator](https://user-images.githubusercontent.com/76716519/131508136-5144737e-a6e9-4bf4-8006-29d43782f432.gif)
+![calculator](https://user-images.githubusercontent.com/76716519/132006016-d983c215-ccf7-49fd-9db6-6d7e7a886d76.gif)
 
 ## :question: What I Learn
 
@@ -136,3 +136,25 @@ user.drinkWater(); // 'Park drinks water.'
 ```
 
 참고: [this-MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
+---
+
+#### 5. JavaScript: eval()
+
+- eval() : 문자로 표현된 자바스크립트 코드를 실행하는 함수
+
+##### :x: eval() 함수를 사용하면 안 되는 이유
+
+1. eval()은 인자로 받은 코드를 caller의 권한으로 수행하는 위험한 함수
+
+2. 악의적인 영향을 받았을 수 있는 문자열을 eval()로 실행한다면, 해당 웹페이지나 확장 프로그램의 권함으로 사용자의 기기에서 악의적인 코드를 수행하는 결과를 초래
+
+3. 제3자 코드가 eval()이 호출된 위치의 스코프를 볼 수 있으며, 이를 이용해 비슷한 함수인 Function으로는 실현할 수 없는 공격이 가능
+
+4. 최신 JS 엔진에서 여러 코드 구조를 최적화하는 것과 달리 eval()은 JS 인터프리터를 사용해야 하기 때문에 다른 대안들보다 느림
+
+- 최신 자바스크립트 인터프리터는 코드를 기계 코드로 변환함. 즉, 변수명의 개념이 완전히 사라짐
+- eval()을 사용하면 브라우저는 기계 코드에 해당 변수가 있는지 확인하고 값을 대입하기 위해 길고 무거운 변수명 검색을 수행해야 함
+- eval()을 통해 자료형 변경 등 변수에 변화가 일어날 수 있으며, 브라우저는 이에 대응하기 위해 기계 코드를 재작성해야 함
+
+참고 : [eval() - JavaScript | MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/eval#eval%EC%9D%84_%EC%A0%88%EB%8C%80_%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80_%EB%A7%90_%EA%B2%83!)
