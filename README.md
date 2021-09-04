@@ -8,3 +8,7 @@
 ## [2. Calculator](./calculator)
 
 <p align="center"><img src = "https://user-images.githubusercontent.com/76716519/132009917-a8681291-4b70-4838-9f2f-813bf167a454.gif" width="50%"></p>
+
+## [3. Clock](./clock)
+
+<p align="center"><img src = "https://user-images.githubusercontent.com/76716519/132076438-1d8d5566-106a-4878-9325-6e224c71e97e.gif" width="50%"></p>
