@@ -13,7 +13,10 @@ HTML / CSS / Vanilla JS
 - `content`속성과 짝지어 요소에 콘텐츠를 추가할 때 사용
 - `<img>`나 `<br>` 등 대체 요소에 적용할 수 없음
 - 기본값은 인라인
-  참고: [Pseudo-elements-MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+참고: [Pseudo-elements-MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+<hr/>
 
 #### 2. JS: Date 객체
 
@@ -22,3 +25,12 @@ HTML / CSS / Vanilla JS
 - Date 객체는 생성자 함수 이므로 `new`키워드를 통해 객체를 생성해야 한다.
 
 참고: [Dat-MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date) | [Javascript-Date-Blog](https://poiemaweb.com/js-date)
+
+
+<hr/>
+
+#### 3. UI: Neumorphism (뉴모피즘)
+
+- new(새로운)와 skeuomorphism(스큐어모피즘)의 합성어. 즉 새로운 스큐어모피즘
+- 객체(Object)와 배경간의 구분을 오직 그림자로 함으로 볼륨감 있고 생생하게 살아있는 듯한 느낌을 받게하는 디자인
+- [Neumorphism.io](https://neumorphism.io/)
