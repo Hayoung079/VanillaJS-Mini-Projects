@@ -6,12 +6,14 @@ class Calculator {
 		this.inputHistory = []; // input을 저장하는 배열
 	}
 
+	// C 버튼 클릭시 동작
 	clear() {
 		this.inputHistory = [];
 		this.updateInputDisplay();
 		this.updateOutputDisplay('0');
 	}
 
+	// ← 버튼 클릭시 동작
 	delete() {
 		switch (this.getLastInputType()) {
 			case 'number':
@@ -29,6 +31,7 @@ class Calculator {
 		}
 	}
 
+	// % 버튼 클릭시 동작 - toggle
 	changePersentToDecimal() {
 		if (this.getLastInputType() === 'number') {
 			if (this.percentToggle === true) {
@@ -41,6 +44,7 @@ class Calculator {
 		}
 	}
 
+	// 숫자 버튼 클릭시 동작
 	insertNumber(value) {
 		if (this.getLastInputType() === 'number') {
 			this.appendToLastInput(value);
@@ -52,6 +56,7 @@ class Calculator {
 		}
 	}
 
+	// 연산자 버튼 클릭시 동작
 	insertOperation(value) {
 		switch (this.getLastInputType()) {
 			case 'number':
@@ -71,12 +76,14 @@ class Calculator {
 		}
 	}
 
+	// +/- 버튼 클릭시 동작
 	negateNumber() {
 		if (this.getLastInputType() === 'number') {
 			this.editLastInput(parseFloat(this.getLastInputValue()) * -1, 'number');
 		}
 	}
 
+	// . 버튼 클릭시 동작
 	insertDecimalPoint() {
 		if (
 			this.getLastInputType() === 'number' &&
@@ -91,26 +98,35 @@ class Calculator {
 		}
 	}
 
+	// = 버튼 클릭시 동작
 	generateResult() {
 		if (this.getLastInputType() === 'number') {
 			const self = this;
+
+			// reducer 함수
 			const simplifyExpression = function (currentExperssion, operator) {
 				if (currentExperssion.indexOf(operator) === -1) {
 					return currentExperssion;
 				} else {
+					// 현재 표현식에서 연산자와 좌항, 우항 분리
 					let operatorIdx = currentExperssion.indexOf(operator);
 					let leftOperandIdx = operatorIdx - 1;
 					let rightOperandIdx = operatorIdx + 1;
 
+					// 연산
 					let partialSolution = self.performOperation(
 						...currentExperssion.slice(leftOperandIdx, rightOperandIdx + 1)
 					);
 
+					// 현재 표현식을 연산 결과값으로 변경
 					currentExperssion.splice(leftOperandIdx, 3, partialSolution.toString());
 
+					// 재귀 함수 : 연산자가 여러개 일 수 있기 때문에
 					return simplifyExpression(currentExperssion, operator);
 				}
 			};
+
+			//  ['/', '*', '+', '-'] 순서대로 돌아가면서 reducer 함수 실행, 초기값은 현재 input 값
 			let result = ['/', '*', '+', '-'].reduce(
 				simplifyExpression,
 				this.getAllInputValues()
@@ -120,10 +136,12 @@ class Calculator {
 				type: 'number',
 				value: Number(result).toLocaleString(),
 			});
+
 			this.inputHistory = this.inputHistory.splice(
 				this.inputHistory.length - 1,
 				1
 			);
+
 			this.updateOutputDisplay(result.toString());
 		}
 	}
@@ -191,6 +209,7 @@ class Calculator {
 		this.outputDisplay.value = Number(value).toLocaleString();
 	}
 
+	// 좌항과 우항, 연산자의 값을 받아 연산을 실행함
 	performOperation(leftOperand, operator, rightOperand) {
 		leftOperand = parseFloat(leftOperand);
 		rightOperand = parseFloat(rightOperand);
