@@ -1,4 +1,4 @@
-## :star: Clock
+## :star: Color Filpper
 
 HTML / CSS / Vanilla JS
 <br/>
