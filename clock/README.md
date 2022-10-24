@@ -5,6 +5,14 @@ HTML / CSS / Vanilla JS
 
 ![clock](https://user-images.githubusercontent.com/76716519/132076438-1d8d5566-106a-4878-9325-6e224c71e97e.gif)
 
+## 🔨 What I Made
+
+```
+  1. setInterval() 를 사용하여 1초마다 Date의 getHours(), getMinutes(), getSeconds()함수로 현재 시, 분, 초를 구하고 각도를 계산
+  2. JavaScript style속성의 transform으로 시,분,초 침을 회전시킴
+  3. 테마 변경 버튼 클릭시, 토글로 .light class를 추가/제거하여 테마별 css 적용
+```
+
 ## :question: What I Learn
 
 #### 1. CSS: ::before / ::after
@@ -20,17 +28,8 @@ HTML / CSS / Vanilla JS
 
 #### 2. JS: Date 객체
 
-- 날짜와 시간을 위한 메소드를 제공하느 빌트인 객체이자 생성자 함수
+- 날짜와 시간을 위한 메소드를 제공하는 빌트인 객체이자 생성자 함수
 - 1970년 1월 1일 00:00(UTC)을 기점으로 현재 시간까지의 시간 차이를 밀리초로 나타내는 정수 값을 담음
 - Date 객체는 생성자 함수 이므로 `new`키워드를 통해 객체를 생성해야 한다.
 
 참고: [Dat-MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date) | [Javascript-Date-Blog](https://poiemaweb.com/js-date)
-
-
-<hr/>
-
-#### 3. UI: Neumorphism (뉴모피즘)
-
-- new(새로운)와 skeuomorphism(스큐어모피즘)의 합성어. 즉 새로운 스큐어모피즘
-- 객체(Object)와 배경간의 구분을 오직 그림자로 함으로 볼륨감 있고 생생하게 살아있는 듯한 느낌을 받게하는 디자인
-- [Neumorphism.io](https://neumorphism.io/)

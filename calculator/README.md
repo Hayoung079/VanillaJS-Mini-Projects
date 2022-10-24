@@ -5,6 +5,16 @@ HTML / CSS / Vanilla JS
 
 ![calculator](https://user-images.githubusercontent.com/76716519/132009917-a8681291-4b70-4838-9f2f-813bf167a454.gif)
 
+## 🔨 What I Made
+
+```
+1. 숫자, 연산자, +/-, %, . 버튼 클릭시 디스플레이 화면에 해당 값 표시
+2. C 버튼 클릭시 입력된 모든 값 삭제
+3. ← 버튼 클릭시 마지막 입렫된 값 삭제
+4. = 버튼 클릭시 현재까지 입려된 값 계산 후 output 디스플레이에 표시
+5. 1~4까지 반복 실행 가능
+```
+
 ## :question: What I Learn
 
 #### 1. HTML: Data 속성
@@ -14,11 +24,17 @@ HTML / CSS / Vanilla JS
 - 자바스크립트에서 접근하는 방법은 dataset객체를 통해 data- 뒷 부분을 사용한다.<br/>
   단, 대시들은 camelCase로 변환된다.
 
-```c
-<input type="text" id="name" data-value="user01" data-code="c01" data-user-name="Park">
+```html
+<input
+	type="text"
+	id="name"
+	data-value="user01"
+	data-code="c01"
+	data-user-name="Park"
+/>
 ```
 
-```c
+```javascript
 const input = document.querySelector('#name');
 console.log(input.dataset.value); // user01
 console.log(input.dataset.code); // c01
@@ -52,23 +68,22 @@ console.log(input.dataset.userName); // Park
 
 - new 연산자를 통해 생성
 
-```c
+```javascript
 class User {
-  // 멤버 변수
-  constructor(name) {
-    this.name = name;
-  }
+	// 멤버 변수
+	constructor(name) {
+		this.name = name;
+	}
 
-  // 메서드
-  sayHi() {
-    console.log(`Hi ${this.name}`);
-  }
+	// 메서드
+	sayHi() {
+		console.log(`Hi ${this.name}`);
+	}
 }
-
 ```
 
-```c
-const user = new User("Park");
+```javascript
+const user = new User('Park');
 user.sayHi(); // 'Hi Park'
 ```
 
@@ -83,11 +98,11 @@ user.sayHi(); // 'Hi Park'
 
 - 일반 함수 안에서 사용하면 window(글로벌 객체)를 의미
 
-```c
+```javascript
 console.log(this === window); // true
 
 function x() {
-  return this;
+	return this;
 }
 
 x() === window; // true
@@ -95,7 +110,7 @@ x() === window; // true
 
 - 메서드 안에서 사용하면 메서드를 호출한 객체를 의미
 
-```c
+```javascript
 const user {
   name: "Park",
   age: 20,
@@ -109,37 +124,72 @@ user.drinkWater(); // 'Park drinks water.'
 
 - 생성자(constructor) 안에서 사용하면 그 생성자로 새로 생성되는 객체를 의미
 
-```c
- function Person() {
-    this.name = "Park",
-    this.age = 20,
-    this.drink = function() {
-      console.log(`${this.name} drinks water.`);
-    }
-  }
- const person1 = new Person();
- console.log(person1); // Person { name: "Park", age: 20, drink: f}
+```javascript
+function Person() {
+	(this.name = 'Park'),
+		(this.age = 20),
+		(this.drink = function () {
+			console.log(`${this.name} drinks water.`);
+		});
+}
+const person1 = new Person();
+console.log(person1); // Person { name: "Park", age: 20, drink: f}
 ```
 
 - 이벤트 리스너 안에서 사용하면 event.target(이벤트를 발생시킨 요소)과 일치
 
-```c
+```html
 <button id="button">버튼</button>
-  <script>
-    document.getElementByI("button").addEventListene("click", function (e) {
-      console.log(e.target);
-      //<button id="button">버튼<button>
-      console.log(this);
-      //<button id="button">버튼<button>
-    });
-  </script>
+<script>
+	document.getElementByI('button').addEventListene('click', function (e) {
+		console.log(e.target);
+		//<button id="button">버튼<button>
+		console.log(this);
+		//<button id="button">버튼<button>
+	});
+</script>
 ```
 
 참고: [this-MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 ---
 
-#### 5. JavaScript: eval()
+#### 5. JavaScript: 재귀 함수
+
+- 함수내부에서 자기 자신을 다시 호출하는 구조의 함수
+- 반드시 종료 조건이 있어야 함
+  - 재귀 호출을 중단시키는 조건 문장을 `Base case` 또는 `Termination case`라고 함
+- 재귀 함수를 사용하면 함수의 호출이 스택에 차곡 차곡 쌓이게 되고, 위에서부터 차례대로 값을 반환하기 전에는 계속 메모리 공간을 차지하고 있기 때문에 메모리 효율이 좋지 못 할 수도 있음
+  - 따라서 경우에 따라 그냥 반복문을 사용하는게 더 나을 수 있음
+
+---
+
+#### 6. JavaScript: 배열 함수 reduce()
+
+- 배열의 각 요소를 순회하며 callback함수(reducer)의 실행 값을 누적하여 하나의 결과값을 반환
+
+```javaSceipt
+arr.reduce(callback[, initialValue])
+```
+
+- Parameters
+
+  - `callback function`
+
+    1. accumulator: callback함수의 반환값을 누적
+    2. currentValue: 배열의 현재 요소
+    3. index(Optional): 배열의 현재 요소의 인덱스
+    4. array(Optional): 호출한 배열
+
+  - `initialValue(Optional)`
+    - 최초 callback함수 실행 시 accumulator 인수에 제공되는 값
+    - 초기값을 제공하지 않을 경우 배열의 첫 번째 요소를 사용하고, 빈 배열에서 초기값이 없을 경우 에러 발생
+
+참고: [reduce()-MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+
+---
+
+#### 7. JavaScript: eval()
 
 - eval() : 문자로 표현된 자바스크립트 코드를 실행하는 함수
 
