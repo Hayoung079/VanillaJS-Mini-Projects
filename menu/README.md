@@ -3,7 +3,7 @@
 HTML / CSS / Vanilla JS
 <br/>
 
-![Menu](https://user-images.githubusercontent.com/76716519/197791204-4f6d1f0f-f761-4625-bffc-0e77f2acbfa7.gif)
+![Menu](https://user-images.githubusercontent.com/76716519/197828585-002ef495-b6f7-4130-a8a5-7ea1bc23aabc.gif)
 
 <br/>
 
