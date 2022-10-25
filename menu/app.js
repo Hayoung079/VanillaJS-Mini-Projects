@@ -74,13 +74,33 @@ const menu = [
 	},
 ];
 
+// DOM
 const sectionCenter = document.querySelector('.section-center');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
-// Event: 브라우저가 HTML을 불러올 때
+// load items
 window.addEventListener('DOMContentLoaded', function () {
 	displayMenuItems(menu);
 });
 
+// filter itmes
+filterBtns.forEach(function (btn) {
+	btn.addEventListener('click', function (e) {
+		const category = e.currentTarget.dataset.id;
+		const menuCategory = menu.filter(function (menuitems) {
+			if (menuitems.category === category) {
+				return menuitems;
+			}
+		});
+		if (category === 'all') {
+			displayMenuItems(menu);
+		} else {
+			displayMenuItems(menuCategory);
+		}
+	});
+});
+
+// display items
 function displayMenuItems(menuItems) {
 	let displayMenu = menuItems.map(function (item) {
 		return `<article class="menu-item">
