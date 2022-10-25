@@ -164,32 +164,7 @@ console.log(person1); // Person { name: "Park", age: 20, drink: f}
 
 ---
 
-#### 6. JavaScript: 배열 함수 reduce()
-
-- 배열의 각 요소를 순회하며 callback함수(reducer)의 실행 값을 누적하여 하나의 결과값을 반환
-
-```javaSceipt
-arr.reduce(callback[, initialValue])
-```
-
-- Parameters
-
-  - `callback function`
-
-    1. accumulator: callback함수의 반환값을 누적
-    2. currentValue: 배열의 현재 요소
-    3. index(Optional): 배열의 현재 요소의 인덱스
-    4. array(Optional): 호출한 배열
-
-  - `initialValue(Optional)`
-    - 최초 callback함수 실행 시 accumulator 인수에 제공되는 값
-    - 초기값을 제공하지 않을 경우 배열의 첫 번째 요소를 사용하고, 빈 배열에서 초기값이 없을 경우 에러 발생
-
-참고: [reduce()-MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-
----
-
-#### 7. JavaScript: eval()
+#### 6. JavaScript: eval()
 
 - eval() : 문자로 표현된 자바스크립트 코드를 실행하는 함수
 

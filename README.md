@@ -18,7 +18,13 @@
 
 </details>
 <details>
-  <summary>4. Calculator</summary>
+  <summary>4. Menu</summary>
+
+[<img src = "https://user-images.githubusercontent.com/76716519/197791204-4f6d1f0f-f761-4625-bffc-0e77f2acbfa7.gif" width="50%">](./menu#-what-i-made)
+
+</details>
+<details>
+  <summary>5. Calculator</summary>
 
 [<img src = "https://user-images.githubusercontent.com/76716519/132009917-a8681291-4b70-4838-9f2f-813bf167a454.gif" width="50%">](./calculator#-what-i-made)
 
