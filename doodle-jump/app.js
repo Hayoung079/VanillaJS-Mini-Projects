@@ -63,6 +63,17 @@ function movePlatforms() {
 			platform.bottom -= 4;
 			let visual = platform.visual;
 			visual.style.bottom = platform.bottom + 'px';
+
+			if (platform.bottom < 10) {
+				let firstPlatform = platforms[0].visual;
+				firstPlatform.classList.remove('platform');
+
+				platforms.shift();
+				score++;
+
+				const newPlatform = new Platform(600);
+				platforms.push(newPlatform);
+			}
 		});
 	}
 }
@@ -103,14 +114,6 @@ function fall() {
 			}
 		});
 	}, 20);
-}
-
-// GameOver
-function gameOver() {
-	console.log('game over');
-	isGameOver = true;
-	clearInterval(upTimerId);
-	clearInterval(downTimerId);
 }
 
 // Move left
@@ -165,6 +168,22 @@ function control(e) {
 	} else if (e.key === 'ArrowUp') {
 		moveStraight();
 	}
+}
+
+// GameOver
+function gameOver() {
+	isGameOver = true;
+
+	while (grid.firstChild) {
+		grid.removeChild(grid.firstChild);
+	}
+
+	grid.innerHTML = `Your Score: ${score}`;
+
+	clearInterval(upTimerId);
+	clearInterval(downTimerId);
+	clearInterval(leftTimerId);
+	clearInterval(rightTimerId);
 }
 
 // Start
