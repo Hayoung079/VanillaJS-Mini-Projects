@@ -114,13 +114,46 @@ function gameOver() {
 }
 
 // Move left
-function moveLeft() {}
+function moveLeft() {
+	if (isGoingRight) {
+		clearInterval(rightTimerId);
+		isGoingRight = false;
+	}
+	isGoingLeft = true;
+	leftTimerId = setInterval(function () {
+		if (doodlerLeftSpace >= 0) {
+			doodlerLeftSpace -= 5;
+			doodler.style.left = doodlerLeftSpace + 'px';
+		} else {
+			moveRight();
+		}
+	}, 20);
+}
 
 // Move right
-function moveRight() {}
+function moveRight() {
+	if (isGoingLeft) {
+		clearInterval(leftTimerId);
+		isGoingLeft = false;
+	}
+	isGoingRight = true;
+	rightTimerId = setInterval(function () {
+		if (doodlerLeftSpace <= 340) {
+			doodlerLeftSpace += 5;
+			doodler.style.left = doodlerLeftSpace + 'px';
+		} else {
+			moveLeft();
+		}
+	}, 20);
+}
 
 // Move straight
-function moveStraight() {}
+function moveStraight() {
+	isGoingLeft = false;
+	isGoingRight = false;
+	clearInterval(leftTimerId);
+	clearInterval(rightTimerId);
+}
 
 // Control
 function control(e) {
@@ -141,6 +174,7 @@ function start() {
 		createDoodler();
 		setInterval(movePlatforms, 30);
 		jump();
+		document.addEventListener('keyup', control);
 	}
 }
 start();
