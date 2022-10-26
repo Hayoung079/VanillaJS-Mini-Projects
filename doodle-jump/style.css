@@ -1,20 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
+  position: relative;
   width: 400px;
   height: 600px;
-  background-color: yellow;
-  position: relative;
+  background-image: url('background.png');
+  font-size: 80px;
+  text-align: center;
 }
 
 .doodler {
-  width: 60px;
-  height: 85px;
-  background-color: red;
   position: absolute;
+  width: 87px;
+  height: 85px;
+  background-image: url('doodler-guy.png');
 }
 
 .platform {
+  position: absolute;
   width: 85px;
   height: 15px;
-  background-color: green;
-  position: absolute;
+  background-image: url('platform.png');
 }
