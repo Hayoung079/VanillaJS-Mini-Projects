@@ -3,16 +3,28 @@ const grid = document.querySelector('.grid');
 const doodler = document.createElement('div');
 
 // Variables
-let doodlerLeftSpace = 50;
-let doodlerBottomSpace = 150;
 let isGameOver = false;
-let platformCount = 5;
+let isJumping = true;
+let isGoingLeft = false;
+let isGoingRight = false;
+let score = 0;
 let platforms = [];
+let platformCount = 5;
+let speed = 3;
+const gravity = 0.9;
+let startPoint = 150;
+let doodlerLeftSpace = 50;
+let doodlerBottomSpace = startPoint;
+let upTimerId;
+let downTimerId;
+let leftTimerId;
+let rightTimerId;
 
 // Create Character
 function createDoodler() {
 	grid.appendChild(doodler);
 	doodler.classList.add('doodler');
+	doodlerLeftSpace = platforms[0].left;
 	doodler.style.left = doodlerLeftSpace + 'px';
 	doodler.style.bottom = doodlerBottomSpace + 'px';
 }
@@ -55,12 +67,80 @@ function movePlatforms() {
 	}
 }
 
+// Jump Doodler
+function jump() {
+	clearInterval(downTimerId);
+	upTimerId = setInterval(function () {
+		doodlerBottomSpace += 20;
+		doodler.style.bottom = doodlerBottomSpace + 'px';
+		if (doodlerBottomSpace > startPoint + 200) {
+			fall();
+			isJumping = false;
+		}
+	}, 30);
+}
+
+// Fall Doodler
+function fall() {
+	clearInterval(upTimerId);
+	downTimerId = setInterval(function () {
+		doodlerBottomSpace -= 5;
+		doodler.style.bottom = doodlerBottomSpace + 'px';
+		if (doodlerBottomSpace <= 0) {
+			gameOver();
+		}
+		// platform에 닿으면 다시 jump
+		platforms.forEach((platform) => {
+			if (
+				doodlerBottomSpace >= platform.bottom &&
+				doodlerBottomSpace <= platform.bottom + 15 &&
+				doodlerLeftSpace + 60 >= platform.left &&
+				doodlerLeftSpace <= platform.left + 85 &&
+				!isJumping
+			) {
+				startPoint = doodlerBottomSpace;
+				jump();
+			}
+		});
+	}, 20);
+}
+
+// GameOver
+function gameOver() {
+	console.log('game over');
+	isGameOver = true;
+	clearInterval(upTimerId);
+	clearInterval(downTimerId);
+}
+
+// Move left
+function moveLeft() {}
+
+// Move right
+function moveRight() {}
+
+// Move straight
+function moveStraight() {}
+
+// Control
+function control(e) {
+	doodler.style.bottom = doodlerBottomSpace + 'px';
+	if (e.key === 'ArrowLeft') {
+		moveLeft();
+	} else if (e.key === 'ArrowRight') {
+		moveRight();
+	} else if (e.key === 'ArrowUp') {
+		moveStraight();
+	}
+}
+
 // Start
 function start() {
 	if (!isGameOver) {
-		createDoodler();
 		createPlatforms();
+		createDoodler();
 		setInterval(movePlatforms, 30);
+		jump();
 	}
 }
 start();
