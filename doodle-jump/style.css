@@ -15,7 +15,7 @@ body {
   position: relative;
   width: 400px;
   height: 600px;
-  background-image: url('background.png');
+  background-image: url('./images/background.png');
   font-size: 80px;
   text-align: center;
 }
@@ -24,12 +24,12 @@ body {
   position: absolute;
   width: 87px;
   height: 85px;
-  background-image: url('doodler-guy.png');
+  background-image: url('./images/doodler-guy.png');
 }
 
 .platform {
   position: absolute;
   width: 85px;
   height: 15px;
-  background-image: url('platform.png');
+  background-image: url('./images/platform.png');
 }
