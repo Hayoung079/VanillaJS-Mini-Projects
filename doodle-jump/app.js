@@ -1,5 +1,7 @@
 // DOM
 const grid = document.querySelector('.grid');
+const howButton = document.querySelector('.howBtn');
+const startButton = document.querySelector('.startBtn');
 const doodler = document.createElement('div');
 
 // Variables
@@ -9,16 +11,27 @@ let isGoingLeft = false;
 let isGoingRight = false;
 let score = 0;
 let platforms = [];
-let platformCount = 5;
-let speed = 3;
-const gravity = 0.9;
 let startPoint = 150;
 let doodlerLeftSpace = 50;
 let doodlerBottomSpace = startPoint;
+let platformTimerId;
 let upTimerId;
 let downTimerId;
 let leftTimerId;
 let rightTimerId;
+const platformCount = 5;
+
+// initiate variables
+function init() {
+	isGameOver = false;
+	isJumping = true;
+	isGoingLeft = false;
+	isGoingRight = false;
+	score = 0;
+	platforms = [];
+	startPoint = 150;
+	doodlerLeftSpace = 50;
+}
 
 // Create Character
 function createDoodler() {
@@ -178,7 +191,23 @@ function gameOver() {
 		grid.removeChild(grid.firstChild);
 	}
 
-	grid.innerHTML = `Your Score: ${score}`;
+	const scoreBox = document.createElement('h2');
+	scoreBox.className = 'score';
+	scoreBox.innerText = `Your score: ${score}`;
+
+	const retryButton = document.createElement('div');
+	retryButton.className = 'retryBtn';
+	retryButton.innerHTML =
+		'<p>Retry</p><button class="btn"><i class="fas fa-undo"></i></button>';
+
+	grid.append(scoreBox, retryButton);
+
+	// retry
+	retryButton.addEventListener('click', function () {
+		init();
+		clearInterval(platformTimerId);
+		start();
+	});
 
 	clearInterval(upTimerId);
 	clearInterval(downTimerId);
@@ -188,12 +217,14 @@ function gameOver() {
 
 // Start
 function start() {
+	grid.innerHTML = '';
+	console.log(isGameOver);
 	if (!isGameOver) {
 		createPlatforms();
 		createDoodler();
-		setInterval(movePlatforms, 30);
+		platformTimerId = setInterval(movePlatforms, 30);
 		jump();
 		document.addEventListener('keyup', control);
 	}
 }
-start();
+startButton.addEventListener('click', start);
