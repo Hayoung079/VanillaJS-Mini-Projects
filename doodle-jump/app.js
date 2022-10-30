@@ -191,9 +191,10 @@ function gameOver() {
 		grid.removeChild(grid.firstChild);
 	}
 
+	// Element Load
 	const scoreBox = document.createElement('h2');
-	scoreBox.className = 'score';
-	scoreBox.innerText = `Your score: ${score}`;
+	scoreBox.className = 'title';
+	scoreBox.innerText = `Your score ${score}`;
 
 	const retryButton = document.createElement('div');
 	retryButton.className = 'retryBtn';
@@ -218,7 +219,6 @@ function gameOver() {
 // Start
 function start() {
 	grid.innerHTML = '';
-	console.log(isGameOver);
 	if (!isGameOver) {
 		createPlatforms();
 		createDoodler();
