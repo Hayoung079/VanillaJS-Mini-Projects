@@ -35,3 +35,14 @@
 [<img src = "https://user-images.githubusercontent.com/76716519/132009917-a8681291-4b70-4838-9f2f-813bf167a454.gif" width="50%">](./calculator#-what-i-made)
 
 </details>
+
+<br/>
+
+### Games
+
+<details>
+  <summary>7. Doodle Jump</summary>
+
+[<img src = "https://user-images.githubusercontent.com/76716519/198864964-c7a41f9b-b5f5-4377-81e5-2006a1325f6f.gif" width="50%">](./doodle-jump#-what-i-made)
+
+</details>
