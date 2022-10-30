@@ -3,6 +3,8 @@ const grid = document.querySelector('.grid');
 const howButton = document.querySelector('.howBtn');
 const startButton = document.querySelector('.startBtn');
 const doodler = document.createElement('div');
+const modal = document.querySelector('.modal');
+const closeButton = document.querySelector('.closeBtn');
 
 // Variables
 let isGameOver = false;
@@ -77,6 +79,7 @@ function movePlatforms() {
 			let visual = platform.visual;
 			visual.style.bottom = platform.bottom + 'px';
 
+			// 바닥 도착시 score 증가 및 새 플랫폼 생성
 			if (platform.bottom < 10) {
 				let firstPlatform = platforms[0].visual;
 				firstPlatform.classList.remove('platform');
@@ -94,6 +97,7 @@ function movePlatforms() {
 // Jump Doodler
 function jump() {
 	clearInterval(downTimerId);
+
 	upTimerId = setInterval(function () {
 		doodlerBottomSpace += 20;
 		doodler.style.bottom = doodlerBottomSpace + 'px';
@@ -107,12 +111,14 @@ function jump() {
 // Fall Doodler
 function fall() {
 	clearInterval(upTimerId);
+
 	downTimerId = setInterval(function () {
 		doodlerBottomSpace -= 5;
 		doodler.style.bottom = doodlerBottomSpace + 'px';
 		if (doodlerBottomSpace <= 0) {
 			gameOver();
 		}
+
 		// platform에 닿으면 다시 jump
 		platforms.forEach((platform) => {
 			if (
@@ -135,7 +141,10 @@ function moveLeft() {
 		clearInterval(rightTimerId);
 		isGoingRight = false;
 	}
+
 	isGoingLeft = true;
+
+	// 벽면에 닿으면 오른쪽으로
 	leftTimerId = setInterval(function () {
 		if (doodlerLeftSpace >= 0) {
 			doodlerLeftSpace -= 5;
@@ -152,7 +161,10 @@ function moveRight() {
 		clearInterval(leftTimerId);
 		isGoingLeft = false;
 	}
+
 	isGoingRight = true;
+
+	// 벽면에 닿으면 왼쪽으로
 	rightTimerId = setInterval(function () {
 		if (doodlerLeftSpace <= 340) {
 			doodlerLeftSpace += 5;
@@ -165,10 +177,10 @@ function moveRight() {
 
 // Move straight
 function moveStraight() {
-	isGoingLeft = false;
-	isGoingRight = false;
 	clearInterval(leftTimerId);
 	clearInterval(rightTimerId);
+	isGoingLeft = false;
+	isGoingRight = false;
 }
 
 // Control
@@ -194,7 +206,7 @@ function gameOver() {
 	// Element Load
 	const scoreBox = document.createElement('h2');
 	scoreBox.className = 'title';
-	scoreBox.innerText = `Your score ${score}`;
+	scoreBox.innerHTML = `Your score <br/> ${score}`;
 
 	const retryButton = document.createElement('div');
 	retryButton.className = 'retryBtn';
@@ -228,3 +240,18 @@ function start() {
 	}
 }
 startButton.addEventListener('click', start);
+
+// Open modal
+howButton.addEventListener('click', () => {
+	modal.classList.add('shown');
+});
+
+// Close modal
+closeButton.addEventListener('click', () => {
+	modal.classList.remove('shown');
+});
+
+// Close modal on outside click
+window.addEventListener('click', (e) => {
+	e.target === modal ? modal.classList.remove('shown') : false;
+});

@@ -33,6 +33,11 @@ body {
   text-transform: uppercase;
 }
 
+.gameBtns {
+  display: flex;
+  flex-direction: column;
+}
+
 .btn {
   width: 150px;
   height: 50px;
@@ -47,6 +52,70 @@ body {
   cursor: pointer;
 }
 
+/* How to play Modal */
+.modal {
+  display: none;
+}
+
+.modal.shown{
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0a0a61;
+  cursor: pointer;
+}
+
+.howContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 300px;
+  height: 210px;
+  background-image: url('./images/background.png');
+  border: 1px solid rgba(0, 0, 0, 0.052);
+  border-radius: 30px;
+  box-shadow: rgb(0 0 0 / 33%) 0px 5px 15px;
+  cursor: default;
+}
+
+.howContainer .howHeader {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.howContainer .howHeader h2 {
+  margin-right: 20px;
+  font-size: 32px;
+  color: #5EBA0C;
+  text-align: center;
+}
+
+.howContainer .howHeader i {
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.howContainer ul {
+  margin-bottom: 20px;
+  list-style: none;
+  font-size: 25px;
+  text-align: left;
+}
+
+.howContainer ul i {
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+/* Game */
 .doodler {
   position: absolute;
   width: 87px;

@@ -5,16 +5,33 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Doodle Jump</title>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-		/>
 		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://kit.fontawesome.com/836510a8a4.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
 		<div class="grid">
 			<h2 class="title">doodle jump</h2>
-			<button class="btn startBtn">Start</button>
+			<div class="gameBtns">
+				<button class="btn howBtn">How to play</button>
+				<button class="btn startBtn">Start</button>
+			</div>
+		</div>
+		<!-- How to play Modal -->
+		<div class="modal">
+			<div class="howContainer">
+				<div class="howHeader">
+					<h2>How to play</h2>
+					<i class="closeBtn fa-solid fa-circle-xmark"></i>
+				</div>
+				<ul>
+					<li>Move Left: <i class="fa-solid fa-circle-arrow-left"></i></li>
+					<li>Move Right: <i class="fa-solid fa-circle-arrow-right"></i></li>
+					<li>Move Straight: <i class="fa-solid fa-circle-arrow-up"></i></li>
+				</ul>
+			</div>
 		</div>
 		<script src="app.js"></script>
 	</body>
