@@ -29,7 +29,8 @@ HTML / CSS / Vanilla JS
   - Parameters
     - `function|code`: 반복적으로 실행할 함수 또는 문자열, 문자열은 보안 위험으로 인해 권장되지 않음
     - `delay(optional)`: 시간 간격(ms), 1s = 1000ms
-    - `arg0, …, argN(optional)`: 함수에 전달할 인수, IE9 이하에서는 지원한지 않음
+    - `arg0, …, argN(optional)`: 함수에 전달할 인수, IE9 이하에서는 지원하지 않음
+    <br/>
 
   ```js
   function sayHi(who, phrase) {
@@ -47,6 +48,7 @@ HTML / CSS / Vanilla JS
 
   - Parameters
     - `intervalID `: setInterval() 함수가 리턴한 id
+    <br/>
 
   ```js
   let timerId = setTimeout(...);
